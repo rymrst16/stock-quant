@@ -28,13 +28,14 @@ def get_ip():
     ip=re.findall(ip_compile,str(data))  
     port=re.findall(port_compile,str(data))  
     return [":".join(i) for i in zip(ip,port)]  
-  
+'''
 #打印代理IP   
 def printIP(ip):  
     myip=ip  
     for ips in myip:  
         print(ips) 
     print("print end") 
+'''
       
 #agent 池  
 agents = [  
@@ -150,9 +151,9 @@ def get_url(code,ips=[]):
         date = datetime.datetime.now().strftime('%H:%M:%S')  
         print("第%s次 时间： [%s] ：当前IP:[%s] (剩余可用代理IP数：%s)" % (code,date,ip,len(ips)))
   
-  
+'''
 ips = []  
-for i in range(6000):  
+for i in range(6000):
     # 每隔1000次重新获取一次最新的代理IP，每次可获取最新的100个代理IP  
     if i % 1000 == 0:  
         ips.extend(get_ip())  
@@ -160,3 +161,4 @@ for i in range(6000):
     t1 = threading.Thread(target=get_url,args=(i,ips))  
     t1.start()  
     time.sleep(2)
+'''
